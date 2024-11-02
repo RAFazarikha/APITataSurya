@@ -14,18 +14,18 @@ planets = [
     {"name": "Neptune", "description": "Planet kedelapan dan terjauh dari matahari dalam tata surya."}
 ]
 
-# # Endpoint untuk mendapatkan semua planet
-# @app.route('/planets', methods=['GET'])
-# def get_planets():
-#     return jsonify(planets)
+# Endpoint untuk mendapatkan semua planet
+@app.route('/planets', methods=['GET'])
+def get_planets():
+    return jsonify(planets)
 
-# # Endpoint untuk mendapatkan planet berdasarkan nama
-# @app.route('/planets/<string:name>', methods=['GET'])
-# def get_planet(name):
-#     planet = next((p for p in planets if p["name"].lower() == name.lower()), None)
-#     if planet:
-#         return jsonify(planet)
-#     return jsonify({"message": "Planet tidak ditemukan"}), 404
+# Endpoint untuk mendapatkan planet berdasarkan nama
+@app.route('/planets/<string:name>', methods=['GET'])
+def get_planet(name):
+    planet = next((p for p in planets if p["name"].lower() == name.lower()), None)
+    if planet:
+        return jsonify(planet)
+    return jsonify({"message": "Planet tidak ditemukan"}), 404
 
 # Menjalankan aplikasi
 if __name__ == '__main__':
