@@ -1,0 +1,32 @@
+from flask import Flask, jsonify, request
+
+app = Flask(__name__)
+
+# Data tentang planet dalam tata surya
+planets = [
+    {"name": "Mercury", "description": "Planet terdekat dari matahari dan terkecil di tata surya."},
+    {"name": "Venus", "description": "Planet kedua dari matahari, dan memiliki suhu permukaan tertinggi."},
+    {"name": "Earth", "description": "Planet ketiga dari matahari dan satu-satunya yang diketahui memiliki kehidupan."},
+    {"name": "Mars", "description": "Planet keempat yang dikenal sebagai 'Planet Merah'."},
+    {"name": "Jupiter", "description": "Planet terbesar di tata surya, kelima dari matahari."},
+    {"name": "Saturn", "description": "Dikenal dengan cincin yang indah, planet keenam dari matahari."},
+    {"name": "Uranus", "description": "Planet ketujuh dari matahari yang berwarna biru kehijauan."},
+    {"name": "Neptune", "description": "Planet kedelapan dan terjauh dari matahari dalam tata surya."}
+]
+
+# # Endpoint untuk mendapatkan semua planet
+# @app.route('/planets', methods=['GET'])
+# def get_planets():
+#     return jsonify(planets)
+
+# # Endpoint untuk mendapatkan planet berdasarkan nama
+# @app.route('/planets/<string:name>', methods=['GET'])
+# def get_planet(name):
+#     planet = next((p for p in planets if p["name"].lower() == name.lower()), None)
+#     if planet:
+#         return jsonify(planet)
+#     return jsonify({"message": "Planet tidak ditemukan"}), 404
+
+# Menjalankan aplikasi
+if __name__ == '__main__':
+    app.run(debug=True)
